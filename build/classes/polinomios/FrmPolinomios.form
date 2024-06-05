@@ -232,12 +232,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cociente:"/>
+        <Property name="text" type="java.lang.String" value="Resultado:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Cociente:"/>
+        <Property name="text" type="java.lang.String" value="Residuo:"/>
       </Properties>
     </Component>
   </SubComponents>

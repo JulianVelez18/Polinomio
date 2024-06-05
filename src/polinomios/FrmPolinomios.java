@@ -1,4 +1,3 @@
-
 package polinomios;
 
 /**
@@ -92,9 +91,9 @@ public class FrmPolinomios extends javax.swing.JFrame {
         lblPolinomioR.setBackground(new java.awt.Color(255, 204, 153));
         lblPolinomioR.setOpaque(true);
 
-        jLabel4.setText("Cociente:");
+        jLabel4.setText("Resultado:");
 
-        jLabel5.setText("Cociente:");
+        jLabel5.setText("Residuo:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -198,20 +197,24 @@ public class FrmPolinomios extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-         Polinomio p;
+        Polinomio p;
         Polinomio[] div = new Polinomio[2];
         switch (cmbOperacion.getSelectedIndex()) {
             case 0:
                 p = Polinomio.sumar(p1, p2);
-                p.mostrar(lblResiduo);
+                p.mostrar(lblPolinomioR);
+                lblResiduo.setText("");
                 break;
             case 1:
                 p = Polinomio.restar(p1, p2);
-                p.mostrar(lblResiduo);
+                p.mostrar(lblPolinomioR);
+                lblResiduo.setText("");
                 break;
             case 2:
                 p = Polinomio.multiplicar(p1, p2);
                 p.mostrar(lblResiduo);
+                lblResiduo.setText("");
+
                 break;
             case 3:
                 div = Polinomio.dividir(p1, p2);
@@ -220,15 +223,9 @@ public class FrmPolinomios extends javax.swing.JFrame {
                 break;
             case 4:
                 p = cmbPolinomio.getSelectedIndex() == 0 ? p1.getDerivada() : p2.getDerivada();
-                p.mostrar(lblResiduo);
-                break;
-            case 2:
-                p = Polinomio.multiplicar(p1, p2);
                 p.mostrar(lblPolinomioR);
-                break;
-            case 4:
-                p = cmbPolinomio.getSelectedIndex() == 0 ? p1.getDerivada() : p2.getDerivada();
-                p.mostrar(lblPolinomioR);
+                lblResiduo.setText("");
+
                 break;
         }
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -239,7 +236,7 @@ public class FrmPolinomios extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbOperacionActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        
+
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
